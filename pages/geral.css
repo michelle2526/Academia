@@ -14,7 +14,14 @@ nav a{
 }
 
 .Encontrar{
-    padding: 5px;
-    margin: 5px;
+   
+    padding: 10px;
+    margin: 30px;
     align-content: center;
+    color:  rgb(228, 207, 207);;
+}
+
+input{
+    width: 350px;
+    
 }
