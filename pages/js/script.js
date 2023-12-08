@@ -1,17 +1,46 @@
 $(document).ready(function() {
-    $(".adicionar-ao-carrinho").on("click", function() {
-        // Obtém os detalhes do produto
-        var produto = $(this).closest(".card");
-        var nome = produto.find(".card-title").text();
-        var preco = parseFloat(produto.find(".card-title").next().text().replace('R$', '').trim());
+    // Array para armazenar produtos na sacola
+    var sacolaProdutos = [];
 
-        // Adiciona o produto ao carrinho
-        var itemCarrinho = $("<li class='list-group-item'>" + nome + " - R$ " + preco.toFixed(2) + "</li>");
-        $("#lista-carrinho").append(itemCarrinho);
+    // Função para adicionar um produto à sacola
+    function adicionarNaSacola(nomeProduto, precoProduto) {
+      var produto = {
+        nome: nomeProduto,
+        preco: precoProduto
+      };
 
-        // Atualiza o total do carrinho
-        var totalAtual = parseFloat($("#total-carrinho").text());
-        var novoTotal = totalAtual + preco;
-        $("#total-carrinho").text(novoTotal.toFixed(2));
+      
+      sacolaProdutos.push(produto);
+
+      // Atualizar a exibição da sacola
+      atualizarSacola();
+    }
+
+    // Função para atualizar a exibição da sacola
+    function atualizarSacola() {
+      // Limpar a exibição atual da sacola
+      $("#sacola").empty();
+
+      // Adicionar cada produto à exibição da sacola
+      sacolaProdutos.forEach(function(produto, index) {
+        $("#sacola").append("<li>" + produto.nome + " - R$" + produto.preco + " <button class='remover' data-index='" + index + "'>Remover</button></li>");
+      });
+
+      // Adicionar evento de clique para remover produtos
+      $(".remover").click(function() {
+        var index = $(this).data("index");
+        sacolaProdutos.splice(index, 1);
+        atualizarSacola();
+      });
+    }
+
+    // Adicionar evento de clique para o botão "Comprar"
+    $("#comprar").click(function() {
+      // Obter o nome e preço do produto atual
+      var nomeProduto = $("#topazulMModal .modal-title").text();
+      var precoProduto = $("#topazulMModal .modal-body h3").text().replace("R$", "").trim();
+
+      // Adicionar o produto à sacola
+      adicionarNaSacola(nomeProduto, precoProduto);
     });
-});
+  });
