@@ -1,9 +1,11 @@
  header{
+     
+     position: fixed;
     background-color: rgb(228, 207, 207);
  }
 
 
-nav a{
+/* nav a{
     
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0px 10px;
@@ -11,7 +13,7 @@ nav a{
     color: rgb(193, 144, 197);
     text-decoration: none;
     
-}
+} */
 
 .Encontrar{
    
@@ -24,4 +26,22 @@ nav a{
 input{
     width: 350px;
     
+}
+
+nav{
+    margin: 10px 0px;
+    padding: 10px 0px;
+    text-align: left;
+    display: flex;
+    justify-content: row;
+    align-items: center;
+    margin-left: 60vw;
+}
+nav a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0px 10px;
+    padding: 0px 10px;
+    color: rgb(85, 33, 90);
+    text-decoration: none;
+    text-align: center;
 }
