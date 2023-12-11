@@ -1,58 +1,15 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var produtos = [{ nome: "Top Azul Marinho", preco: 199 }];
+function adicionarProduto(nome, preco) {
+    // Assume you have a shopping cart array to store products
     var carrinho = [];
 
-    // Função para adicionar produtos ao carrinho
-    function adicionarProduto(botao) {
-        var produto = botao.closest('.card');
-        var nome = produto.querySelector('.card-title').innerText;
-        var precoTexto = produto.querySelector('.card-body .card-title').innerText;
-        var preco = parseFloat(precoTexto.replace('R$', '').trim());
+    // Add the product to the cart
+    carrinho.push({
+      nome: nome,
+      preco: preco
+    });
 
-        // Verifica se o produto já está no carrinho
-        var produtoNoCarrinho = carrinho.find(item => item.nome === nome);
+    // Optionally, you can update the UI or perform other actions
 
-        if (produtoNoCarrinho) {
-            produtoNoCarrinho.quantidade++;
-        } else {
-            carrinho.push({ nome: nome, preco: preco, quantidade: 1 });
-        }
-
-        // Atualiza a exibição do carrinho
-        atualizarCarrinho();
-    }
-
-    // Função para atualizar a exibição do carrinho
-    function atualizarCarrinho() {
-        var listaCarrinho = document.getElementById('lista-carrinho');
-        var totalElement = document.getElementById('total');
-
-        if (!listaCarrinho) {
-            console.error("Elemento 'lista-carrinho' não encontrado.");
-            return;
-        }
-
-        // Limpa a lista do carrinho
-        listaCarrinho.innerHTML = '';
-
-        var total = 0;
-
-        // Itera sobre a lista de produtos no carrinho
-        carrinho.forEach(function (produto) {
-            var tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>${produto.nome}</td>
-                <td>${produto.quantidade}</td>
-                <td>R$ ${produto.preco.toFixed(2)}</td>
-                <td>R$ ${(produto.quantidade * produto.preco).toFixed(2)}</td>
-            `;
-            listaCarrinho.appendChild(tr);
-
-            // Calcula o total
-            total += produto.quantidade * produto.preco;
-        });
-
-        // Atualiza o total na página
-        totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
-    }
-});
+    // Log the updated cart for testing purposes (remove this in a production environment)
+    console.log("Produto adicionado ao carrinho:", carrinho);
+  }

@@ -59,7 +59,7 @@
                         
                       </p>
                       <h6 class="card-title" style="color:var(--verde);">R$ 199</h6>
-                      <button type="button" class="btn btn-primary" data-nome-produto="Top Azul Marinho" data-preco-produto="199.5" onclick="adicionarProduto(this)('Top Azul Marinho', 199.5)">
+                      <button type="button" class="btn btn-primary" nome="Top Azul Marinho" preco="199" onclick="adicionarCarrinho(this),('Top Azul Marinho', 199)">
                         Adicionar ao Carrinho
                     </button>
               </div> 
@@ -180,7 +180,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">FECHAR</button>
-          <button type="button"  class="btn-adicionarcarrinho"onclick="adicionarProduto('Top Azul Marinho', 199)">
+          <button type="button"  class="btn-adicionarcarrinho"onclick ="AdicionarProduto(this,'Top Azul Marinho', 199)">
             Adicionar ao Carrinho
         </button>
           <button type="button" class="btn btn-success" id="comprar" >Comprar</button>
@@ -211,7 +211,7 @@
      <script src="../Produtos/jquery-3.7.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> 
-    <script src="../js/script.js"></script>
+    <script src="../Produtos/script.js"></script>
     <script src="../Sacola/script.js"></script>
 </body>
 </html>
