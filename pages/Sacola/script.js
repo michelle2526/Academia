@@ -1,60 +1,58 @@
-var produtos = [
-    { nome: "Top Azul Marinho", preco: 199 },
-    // Adicione outros produtos conforme necessário
-];
+document.addEventListener('DOMContentLoaded', function () {
+    var produtos = [{ nome: "Top Azul Marinho", preco: 199 }];
+    var carrinho = [];
 
+    // Função para adicionar produtos ao carrinho
+    function adicionarProduto(botao) {
+        var produto = botao.closest('.card');
+        var nome = produto.querySelector('.card-title').innerText;
+        var precoTexto = produto.querySelector('.card-body .card-title').innerText;
+        var preco = parseFloat(precoTexto.replace('R$', '').trim());
 
-var carrinho = [];
+        // Verifica se o produto já está no carrinho
+        var produtoNoCarrinho = carrinho.find(item => item.nome === nome);
 
-// Função para adicionar produtos ao carrinho
-function adicionarProduto(botao) {
-    var produto = botao.parentElement;
-    var nome = produto;
-    var preco = parseFloat(produto);
+        if (produtoNoCarrinho) {
+            produtoNoCarrinho.quantidade++;
+        } else {
+            carrinho.push({ nome: nome, preco: preco, quantidade: 1 });
+        }
 
-    // Verifica se o produto já está no carrinho
-    var produtoNoCarrinho = carrinho.find(item => item.nome === nome);
-
-    if (produtoNoCarrinho) {
-        produtoNoCarrinho.quantidade++;
-    } else {
-        carrinho.push({ nome: nome, preco: preco, quantidade: 1 });
+        // Atualiza a exibição do carrinho
+        atualizarCarrinho();
     }
 
-    // Atualiza a exibição do carrinho
-    atualizarCarrinho();
-}
+    // Função para atualizar a exibição do carrinho
+    function atualizarCarrinho() {
+        var listaCarrinho = document.getElementById('lista-carrinho');
+        var totalElement = document.getElementById('total');
 
-// Função para atualizar a exibição do carrinho
-function atualizarCarrinho() {
-    var listaCarrinho = document.getElementById('lista-carrinho');
-    var totalElement = document.getElementById('total');
+        if (!listaCarrinho) {
+            console.error("Elemento 'lista-carrinho' não encontrado.");
+            return;
+        }
 
-    // Limpa a lista do carrinho
-    listaCarrinho.innerHTML = '';
+        // Limpa a lista do carrinho
+        listaCarrinho.innerHTML = '';
 
-    var total = 0;
+        var total = 0;
 
-    // Itera sobre a lista de produtos no carrinho
-    carrinho.forEach(function (produto) {
-        var tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td>${produto.nome}</td>
-            <td>${produto.quantidade}</td>
-            <td>R$ ${produto.preco.toFixed(2)}</td>
-            <td>R$ ${(produto.quantidade * produto.preco).toFixed(2)}</td>
-        `;
-        listaCarrinho.appendChild(tr);
+        // Itera sobre a lista de produtos no carrinho
+        carrinho.forEach(function (produto) {
+            var tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${produto.nome}</td>
+                <td>${produto.quantidade}</td>
+                <td>R$ ${produto.preco.toFixed(2)}</td>
+                <td>R$ ${(produto.quantidade * produto.preco).toFixed(2)}</td>
+            `;
+            listaCarrinho.appendChild(tr);
 
-        // Calcula o total
-        total += produto.quantidade * produto.preco;
-    });
+            // Calcula o total
+            total += produto.quantidade * produto.preco;
+        });
 
-    // Atualiza o total na página
-    totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
-}
-
-
-
-    
-
+        // Atualiza o total na página
+        totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+    }
+});
