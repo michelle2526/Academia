@@ -1,21 +1,30 @@
+// function exibirCarrinho() {
+//     // Obtém o elemento da lista do carrinho
+//     var listaCarrinho = document.getElementById('lista-carrinho');
 
- 
+//     // Limpa a lista do carrinho antes de atualizar
+//     listaCarrinho.innerHTML = '';
 
-function adicionarCarrinho(nome, preco) {
-    // Assume you have a shopping cart array to store products
-    var carrinho = [];
+//     // Itera sobre os itens no carrinho e os exibe
+//     for (var i = 0; i < carrinho.length; i++) {
+//         var produto = carrinho[i];
 
-    // Add the product to the cart
-    carrinho.push({
-      nome: nome,
-      preco: preco
-    });
+//         // Cria uma nova linha na tabela para cada produto no carrinho
+//         var linha = document.createElement('tr');
+//         linha.innerHTML = `
+//             <td>${produto.nome}</td>
+//             <td>1</td>
+//             <td>R$ ${produto.preco.toFixed(2)}</td>
+//             <td>R$ ${produto.preco.toFixed(2)}</td>
+//         `;
 
-    // Optionally, you can update the UI or perform other actions
+//         // Adiciona a linha à lista do carrinho
+//         listaCarrinho.appendChild(linha);
+//     }
 
-    // Log the updated cart for testing purposes (remove this in a production environment)
-    console.log("Produto adicionado ao carrinho:", carrinho);
+//     // Calcula o total
+//     var total = carrinho.reduce((acc, produto) => acc + produto.preco, 0);
 
-    console.log("Nome do Produto:", nome);
-
-  }
+//     // Atualiza o total na interface do usuário
+//     document.getElementById('total').innerText = `Total: R$ ${total.toFixed(2)}`;
+// }

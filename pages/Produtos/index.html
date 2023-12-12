@@ -10,17 +10,14 @@
 
 </head>
 <body>
-    <header>
+  <header>
         <div id="root" class="container-fluid p-0 m-0">
-            <header>
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
-        <nav class="navbar navbar-expand-lg d-flex m-0">
-          
-                    
+                  <nav class="navbar navbar-expand-lg d-flex m-0">
                     <div class="Encontrar p-10">
                         <input class="pesquisa mr-2 " type="pesquisa" placeholder="o que você procura?" aria-label="Pesquisar" name="name" autocomplete="on"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -31,12 +28,9 @@
                       <a class="nav-link float-right" href="file:///C:/Users/Aluno%20Manh%C3%A3/Documents/GitHub/Academia/pages/Sacola/Sacola.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                         <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
                       </svg></a>
-                  </li>
-
-                  
+                  </li> 
        </header>
        <main>
-    
         <section id="carouselSection" class="container-fluid p-0 my-1 mx-0">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -59,24 +53,24 @@
                         
                       </p>
                       <h6 class="card-title" style="color:var(--verde);">R$ 199</h6>
-                      <button type="button" class="btn btn-primary" nome="Top Azul Marinho" preco="199" onclick="adicionarCarrinho(this),('Top Azul Marinho', 199)">
+                      <a href="http://127.0.0.1:5501/pages/Sacola/Sacola.html" class="btn btn"onclick="adicionarCarrinho('Top Azul Marinho', 199.00)">
                         Adicionar ao Carrinho
-                    </button>
+                      </a>
               </div> 
               </div>
-  
+               <!-- segundo produto -->
               <div class="card p-2 text-center" style="width: 18rem;">
                   <img style="border-radius: 0;"  src="../Produtos/images/topBege.png" class="card-img-top" alt=" top bege">
                   <div class="card-body">
                     <h5 class="card-title" style="color: var(--laranja);">top bege</h5>
                     <p class="card-text">top </p>
                   <h6 class="card-title" style="color:var(--verde);">R$ 199</h6>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#topbegeModal">
-                      Ver Mais
-                    </button>
+                  <a href="http://127.0.0.1:5501/pages/Sacola/Sacola.html" type="button" class="btn btn-primary" nome="Top Azul Marinho" preco="199" onclick="adicionarCarrinho('Top Azul Marinho', 199)">
+                    Adicionar ao Carrinho
+                  </a>
           </div> 
           </div>
-  
+           <!-- terceiro produto -->
           <div class="card p-2 text-center" style="width: 18rem;">
               <img style="border-radius: 0;"  src="../Produtos/images/topCinzamula.png" class="card-img-top" alt="top cinza">
               <div class="card-body">
@@ -84,87 +78,26 @@
                 <p class="card-text">top cinza
               </p>
               <h6 class="card-title" style="color:var(--verde);">R$ 250</h6>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#topcinzaModal">
-                  Ver Mais
-                </button>
+              <a href="http://127.0.0.1:5501/pages/Sacola/Sacola.html" type="button" class="btn btn-primary" nome="Top Azul Marinho" preco="199" onclick="adicionarCarrinho(this),('Top Azul Marinho', 199)">
+                Adicionar ao Carrinho
+              </a>
       </div> 
       </div>
-
-      <div class="card p-2 text-center" style="width: 18rem;">
-        <img style="border-radius: 0;"  src="../Produtos/images/toprosa.png" class="card-img-top" alt="top rosa">
-        <div class="card-body">
-          <h5 class="card-title" style="color: var(--laranja);">top</h5>
-          <p class="card-text">top rosa
-        </p>
-        <h6 class="card-title" style="color:var(--verde);">R$ 250</h6>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#toprosaModal">
-            Ver Mais
-          </button>
-</div> 
-</div>
-
+   <!-- quarto produto -->
+<!-- quarto produto -->
 <div class="card p-2 text-center" style="width: 18rem;">
-    <img style="border-radius: 0;"  src="../Produtos/images/topverde.png" class="card-img-top" alt="top verde">
-    <div class="card-body">
+  <img style="border-radius: 0;"  src="../Produtos/images/toprosa.png" class="card-img-top" alt="top rosa">
+  <div class="card-body">
       <h5 class="card-title" style="color: var(--laranja);">top</h5>
-      <p class="card-text">top verde
-    </p>
-    <h6 class="card-title" style="color:var(--verde);">R$ 250</h6>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#topverdeModal">
-        Ver Mais
-      </button>
-</div> 
+      <p class="card-text">top rosa</p>
+      <h6 class="card-title" style="color:var(--verde);">R$ 250</h6>
+      <a href="../Sacola/Sacola.html" class="btn btn-primary" onclick="adicionarCarrinho('Top Azul Marinho', 199)">
+          Adicionar ao Carrinho
+      </a>
+  </div>
 </div>
-<div class="card p-2 text-center" style="width: 18rem;">
-    <img style="border-radius: 0;"  src="../Produtos/images/shortAzulM.png" class="card-img-top" alt="short azul">
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--laranja);">short</h5>
-      <p class="card-text">short azul
-    </p>
-    <h6 class="card-title" style="color:var(--verde);">R$ 250</h6>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shortazulModal">
-        Ver Mais
-      </button>
-</div> 
-</div>
-<div class="card p-2 text-center" style="width: 18rem;">
-    <img style="border-radius: 0;"  src="../Produtos/images/shortBege.png" class="card-img-top" alt="short bege">
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--laranja);">short</h5>
-      <p class="card-text">short bege
-    </p>
-    <h6 class="card-title" style="color:var(--verde);">R$ 250</h6>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shortbegeModal">
-        Ver Mais
-      </button>
-</div> 
-</div>
-<div class="card p-2 text-center" style="width: 18rem;">
-    <img style="border-radius: 0;"  src="../Produtos/images/shortCinza.webp" class="card-img-top" alt="short cinza">
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--laranja);">short</h5>
-      <p class="card-text">short cinza
-    </p>
-    <h6 class="card-title" style="color:var(--verde);">R$ 250</h6>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shortcinzaModal">
-        Ver Mais
-      </button>
-</div> 
-</div>
-<div class="card p-2 text-center" style="width: 18rem;">
-    <img style="border-radius: 0;"  src="../Produtos/images/shortVerde.png" class="card-img-top" alt="short verde">
-    <div class="card-body">
-      <h5 class="card-title" style="color: var(--laranja);">short</h5>
-      <p class="card-text">short verde
-    </p>
-    <h6 class="card-title" style="color:var(--verde);">R$ 250</h6>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#shortverdeModal">
-        Ver Mais
-      </button>
-</div> 
-</div>
-  </main>
-  <FOOter style="text-align: center; color: black;"> todos os direitos reservados a ACADEMIA MK!</FOOter>
+
+
  <!-- modal top azul marinho -->
   <div class="modal" tabindex="-1" id="topazulMModal">
     <div class="modal-dialog">
@@ -176,7 +109,7 @@
         <div class="modal-body">
             <img class="w-100" src="../Produtos/images/top azulMarinho.png" alt="">
           <p>top azul</p>
-          <h3 style="color: var(--preto);">R$220</h3>
+          <h3 style="color: var(--preto);">R$199,00</h3>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">FECHAR</button>
@@ -190,7 +123,7 @@
   </div>
    
   <!-- Modal de Carrinho -->
-<div class="modal fade" id="carrinhoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="carrinhoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
@@ -206,7 +139,9 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
+
+<!-- <footer style="text-align: center; color: black;"> todos os direitos reservados a ACADEMIA MK!</footer> -->
 
      <script src="../Produtos/jquery-3.7.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

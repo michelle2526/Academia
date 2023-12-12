@@ -8,77 +8,73 @@
     <link rel="stylesheet" href="../Sacola/geral.css">
     <title>sacola</title>
     <style>
+        /* Estilos personalizados */
         body {
-            font-family: Arial, sans-serif;
+            background-color: #c089ce;
+        }
+
+        #carrinhoContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #cc79be;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin: 20px;
         }
 
-        h1 {
-            color: #333;
+        #btnAbrirCarrinho {
+            background-color: #6d2299;
+            border: none;
         }
 
-        .produto {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
-        }
-
-        #carrinho {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid black;
-        }
-
-        .total {
-            text-align: right;
-            margin-top: 20px;
+        #btnAbrirCarrinho:hover {
+            background-color: #c262b2;
         }
     </style>
 </head>
 <body>
-    <form action="" method="post" class="carrinho">
-        <div>
-            <div class="carrinho">
-                <h1>carrinho</h1>
-        <div id="carrinho">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Preço Unitário</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody id="lista-carrinho">
-                    <!-- Os itens do carrinho serão exibidos aqui -->
-                </tbody>
-            </table>
+    <div id="carrinho">
+        <h1>Carrinho</h1>
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Quantidade</th>
+                    <th>Preço Unitário</th>
+                    
+                </tr>
+            </thead> -->
+            <ul id="lista-carrinho">
+                <!-- Itens do carrinho serão exibidos aqui -->
+            </ul>
     
-            <p class="total" id="total">Total: R$ 0.00</p>
-        </div>
-                
-
-        <input type="submit"  value="comprar"> 
-       
+        <p class="total" id="total">Total: R$ 0.00</p>
+    </div>
+    <div id="carrinhoContainer">
+        <button type="button" class="btn btn-primary" onclick="AdicionarProduto('Top Azul Marinho', 199.00)">
+            Adicionar ao Carrinho
+        </button>
         
-    </form>
-   
+
+        <!-- Modal de Carrinho -->
+        <div class="modal fade" id="carrinhoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- ... (seu código modal) -->
+            <div class="modal-body">
+                <ul id="lista-carrinho-modal"></ul>
+                <p class="total" id="total-modal">Total: R$ 0.00</p>
+
+                <!-- Botões "Comprar" e "Limpar Carrinho" dentro do modal-body -->
+                <div class="d-flex justify-content-between mt-3">
+                    <button type="button" class="btn btn-success" onclick="realizarCompra()">Comprar</button>
+                    <button type="button" class="btn btn-danger" onclick="limparCarrinho()">Limpar Carrinho</button>
+                </div>
+            </div>
+            <!-- ... (restante do seu código modal) -->
+        </div>
+    </div>
     
-
-
 
     <script src="../Sacola/jquery-3.7.1.js"></script>
     <script src="../Sacola/script.js"></script>
